@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    input:hover, textarea:hover, select:hover {
+      background-color: gainsboro;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .gender {
+      text-align: center;
+      height: 50px;
+      width: 100%;
+      /* border: 1px solid black; */
+    }
+
+    #male,#female,#other {
+      display: inline-block;
+      height: 47px;
+      width: 25%;
+      border: 1px solid black;
+      text-align: center;
+      padding: 1px;
+    }
+
+    #male:hover,#female:hover,#other:hover{
+      background-color: gainsboro;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Student Registration</h1>
+  <form action="/submit-registration" method="post">
+    Name: <input type="text" name="name" required><br>
+    Roll no: <input type="text" name="roll_no" required><br>
+    Email: <input type="email" name="email" required><br>
+    Phone Number: <input type="tel" name="phone" required><br>
+    Gender: <div class="gender">
+    <div id="male">
+    <input type="radio" name="gender" value="male" required> Male
+    </div>
+    <div id="female">
+    <input type="radio" name="gender" value="female"> Female
+    </div>
+    <div id="other">
+    <input type="radio" name="gender" value="other"> Other
+    </div>
+    </div><br>
+    Date of Birth: <input type="date" name="dob" required><br>
+    Course:
+    <select name="course" required>
+      <option value="">Select</option>
+      <option value="bsc">B.Sc</option>
+      <option value="bcom">B.Com</option>
+      <option value="ba">B.A</option>
+      <option value="btech">B.Tech</option>
+      <option value="bca">B.C.A</option>
+    </select><br>
+    Address: <textarea name="address" required></textarea><br>
+    Password: <input type="password" name="password" required><br>
+    Confirm Password: <input type="password" name="confirm_password" required><br>
+    <input type="submit" value="Register">
+  </form>
+</body>
+</html>
